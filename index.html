@@ -25,33 +25,36 @@
             <h3 ng-show="restaurants.length && !filtered.length">Nothing in Portland, bitch</h3>
             <ul>
               <li ng-repeat="item in filtered = (restaurants | filter:query)">
-                <!-- <span ng-click="showAll = true" ng-hide="showAll"> -->
-                  {{item.name}} <a ng-click="removeRestaurant(item)">Remove</a>
-                <!-- </span> -->
-                                <a ng-click="editing = true" ng-hide="editing">Edit</a>
-                <!-- <span class="form-group" ng-show="showAll" ng-click="showAll = false"> -->
-                <ul>
-                  <li>
-                    Restaurant Name: {{item.name}}
-                  </li>
-                  <li>
-                    Type: {{item.type}}
-                  </li>
-                  <li>
-                    Location: {{item.location}}
-                  </li>
-                  <li>
-                    Price Range: {{item.price}}
-                  </li>
-                </ul>
-                <!-- </span> -->
+                <span ng-click="showAll = true" ng-hide="showAll">
+                  {{item.name}}
+                </span>
+                <a ng-click="removeRestaurant(item)">Remove</a>
+                <a ng-click="editing = true" ng-hide="editing">Edit</a>
+                <span class="form-group" ng-show="showAll" ng-click="showAll = false">
+                  <ul>
+                    <li>
+                      Restaurant Name: {{item.name}}
+                    </li>
+                    <li>
+                      Type: {{item.type}}
+                    </li>
+                    <li>
+                      Location: {{item.location}}
+                    </li>
+                    <li>
+                      Price Range: {{item.price}}
+                    </li>
+                  </ul>
+                </span>
                 <div class="col-md-12">
                   <span class="form-group" ng-show="editing" ng-submit="editing = false">
                     <h4>Edit Restaurant</h4>
-                    <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name" required>
-                    <input type="text" class="form-control input-sm" ng-model="item.type" placeholder="Type" required>
-                    <input type="text" class="form-control input-sm" ng-model="item.location" placeholder="Location" required>
+                    <form>
+                    <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name" required/>
+                    <input type="text" class="form-control input-sm" ng-model="item.type" placeholder="Type" required/>
+                    <input type="text" class="form-control input-sm" ng-model="item.location" placeholder="Location" required/>
                     <button class="btn btn-sm btn-danger" type="submit">Save</button>
+                    </form>
                   </span>
                 </div>
               </li>
