@@ -23,7 +23,7 @@
           <div class="col-md-12">
             <h4 ng-show="restaurants.length && filtered.length">Best Restaurants</h4>
             <h3 ng-show="restaurants.length && !filtered.length">Nothing in Portland, bitch</h3>
-            <ul>
+            <ul style="list-style: none;">
               <li ng-repeat="item in filtered = (restaurants | filter:query)">
                 <span ng-click="showAll = true" ng-hide="showAll">
                   {{item.name}}
@@ -50,10 +50,10 @@
                   <span class="form-group" ng-show="editing" ng-submit="editing = false">
                     <h4>Edit Restaurant</h4>
                     <form>
-                    <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name" required/>
-                    <input type="text" class="form-control input-sm" ng-model="item.type" placeholder="Type" required/>
-                    <input type="text" class="form-control input-sm" ng-model="item.location" placeholder="Location" required/>
-                    <button class="btn btn-sm btn-danger" type="submit">Save</button>
+                      <input type="text" class="form-control input-sm" ng-model="item.name" placeholder="Name" required/>
+                      <input type="text" class="form-control input-sm" ng-model="item.type" placeholder="Type" required/>
+                      <input type="text" class="form-control input-sm" ng-model="item.location" placeholder="Location" required/>
+                      <button class="btn btn-sm btn-danger" type="submit">Save</button>
                     </form>
                   </span>
                 </div>
