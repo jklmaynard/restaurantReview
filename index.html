@@ -25,11 +25,11 @@
             <h3 ng-show="restaurants.length && !filtered.length">Nothing in Portland, bitch</h3>
             <ul>
               <li ng-repeat="item in filtered = (restaurants | filter:query)">
-                <span ng-click="showAll = true" ng-hide="showAll">
+                <!-- <span ng-click="showAll = true" ng-hide="showAll"> -->
                   {{item.name}} <a ng-click="removeRestaurant(item)">Remove</a>
+                <!-- </span> -->
                                 <a ng-click="editing = true" ng-hide="editing">Edit</a>
-                </span>
-                <span class="form-group" ng-show="showAll" ng-click="showAll = false">
+                <!-- <span class="form-group" ng-show="showAll" ng-click="showAll = false"> -->
                 <ul>
                   <li>
                     Restaurant Name: {{item.name}}
@@ -44,7 +44,7 @@
                     Price Range: {{item.price}}
                   </li>
                 </ul>
-                </span>
+                <!-- </span> -->
                 <div class="col-md-12">
                   <span class="form-group" ng-show="editing" ng-submit="editing = false">
                     <h4>Edit Restaurant</h4>
